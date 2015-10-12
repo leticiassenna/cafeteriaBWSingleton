@@ -24,11 +24,11 @@ public class Promocao {
     public Cafeteria promocao(int dia) {
         cafeteria = Cafeteria.getInstance(cafeteria) ;
         setDiaSemana(dia);
-        //System.out.println("entrou");
+        
         try{
             if(getDiaSemana() == 1 || getDiaSemana() == 3 || getDiaSemana() == 5){
                 
-                 Cafe cafeFeito =  cafeteria.getCafeNormal();
+                Cafe cafeFeito =  cafeteria.getCafeNormal();
                 float novoPreco = cafeteria.getCafeNormal().getPreco()/2;
                 cafeFeito.setPreco(novoPreco);
                 cafeFeito.getInformacao();
@@ -55,17 +55,11 @@ public class Promocao {
         }
         return cafeteria;
     }
- 
-    /**
-     * @return the diaSemana
-     */
+
     public int getDiaSemana() {
         return diaSemana;
     }
- 
-    /**
-     * @param diaSemana the diaSemana to set
-     */
+
     public void setDiaSemana(int diaSemana) {
         this.diaSemana = diaSemana;
     }

@@ -12,5 +12,5 @@ import br.ifes.leticia.cafeteriabwsingleton.cdp.Cafe;
  * @author Leticia
  */
 public interface Director {
-    Cafe fazerCafe(Builder atendente);
+    public Cafe fazerCafe(BuilderAbstrato atendente, String cafe);
 }

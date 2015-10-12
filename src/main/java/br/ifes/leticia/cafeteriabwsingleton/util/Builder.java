@@ -14,8 +14,8 @@ import br.ifes.leticia.cafeteriabwsingleton.cdp.Cafe;
 public interface Builder {
     
     public void prepararAgua();
-    public void prepararPoCafe();
+    public void prepararPoCafe(String tipo);
     public void prepararIngredientes();
-    public Cafe servirCafe();
+    public Cafe servirCafe(String nomeCafe);
     
 }

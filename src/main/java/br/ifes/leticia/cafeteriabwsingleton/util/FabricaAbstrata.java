@@ -5,7 +5,7 @@
  */
 package br.ifes.leticia.cafeteriabwsingleton.util;
 
-import br.ifes.leticia.cafeteriabwsingleton.cdp.Agua;
+
 import br.ifes.leticia.cafeteriabwsingleton.cdp.Cafe;
 import br.ifes.leticia.cafeteriabwsingleton.cdp.Ingrediente;
 import br.ifes.leticia.cafeteriabwsingleton.cdp.PoCafe;
@@ -15,11 +15,10 @@ import java.util.ArrayList;
  *
  * @author Leticia
  */
-public interface Fabrica {
+public abstract class FabricaAbstrata {
     
-    public Agua criarAgua();
-    public PoCafe criarPoCafe();
-    public ArrayList<Ingrediente> criarIngrediente();
-    public Cafe criarCafe();
+    public abstract PoCafe criarPoCafe(String tipo);
+    public abstract ArrayList<Ingrediente> criarIngrediente();
+    public abstract Cafe criarCafe(String nome);
     
 }

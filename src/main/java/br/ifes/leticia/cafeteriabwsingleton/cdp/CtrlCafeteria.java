@@ -21,7 +21,12 @@ public class CtrlCafeteria {
         TelaPromocao telaProm = new TelaPromocao();
         
         telaProm.telaPromocao();
-        promocao.promocao(telaProm.getDiaSemana());
+        
+        promocao.promocao(1);
+        
+        promocao.promocao(4);
+        
+        promocao.promocao(7);
         
        
         

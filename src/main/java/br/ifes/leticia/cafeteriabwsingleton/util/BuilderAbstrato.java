@@ -15,26 +15,28 @@ public abstract class BuilderAbstrato implements Builder {
     
     protected Cafe cafe = new Cafe();
     
-    protected Fabrica fabrica;
+    protected FabricaAbstrata fabrica;
+    protected FabricaCafe fabricaCafe;
+    
     
     @Override
-    public void prepararAgua() {
-        
-        cafe.setAgua(fabrica.criarAgua());
-    }
-    
-    @Override
-    public void prepararPoCafe(){
-        cafe.setPoCafe(fabrica.criarPoCafe());
+    public void prepararPoCafe(String tipo){
+        cafe.setPoCafe(fabricaCafe.criarPoCafe(tipo));
     }
     
     @Override
     public void prepararIngredientes(){
-        cafe.setIngredientes(fabrica.criarIngrediente());
+        cafe.setIngredientes(fabricaCafe.criarIngrediente());
     }
     @Override
-    public Cafe servirCafe(){
+    public Cafe servirCafe(String nomeCafe){
+        cafe = fabricaCafe.criarCafe(nomeCafe);
         return cafe;
+    }
+    
+    @Override
+    public void prepararAgua() {
+        
     }
     
 }

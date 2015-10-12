@@ -5,7 +5,7 @@
  */
 package br.ifes.leticia.cafeteriabwsingleton.util;
 
-import br.ifes.leticia.cafeteriabwsingleton.cdp.Agua;
+
 import br.ifes.leticia.cafeteriabwsingleton.cdp.Cafe;
 import br.ifes.leticia.cafeteriabwsingleton.cdp.Ingrediente;
 import br.ifes.leticia.cafeteriabwsingleton.cdp.PoCafe;
@@ -15,16 +15,12 @@ import java.util.ArrayList;
  *
  * @author Leticia
  */
-public class FabricaCafeNormal implements Fabrica{
+public class FabricaCafeNormal extends FabricaAbstrata{
+
     
-    
-    @Override
-    public Agua criarAgua() {
-        return new Agua();
-    }
 
     @Override
-    public PoCafe criarPoCafe() {
+    public PoCafe criarPoCafe(String tipo) {
         return new PoCafe("Cafe Soluvel");
     }
 
@@ -50,12 +46,13 @@ public class FabricaCafeNormal implements Fabrica{
         return cafe.getIngredientes();
     }
 
-    @Override
-    public Cafe criarCafe() {
-        return new Cafe();
-    }
     
-    public void imprimindoIngredientes(Ingrediente ingredientes){
-        System.out.println(ingredientes);
+    @Override
+    public Cafe criarCafe(String nome) {
+        Cafe cafe = new Cafe();
+        cafe.setNome(nome);
+        cafe.setNome("Normal");
+        cafe.setPreco(2);
+        return cafe;
     }
 }

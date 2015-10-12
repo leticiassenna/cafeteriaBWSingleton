@@ -14,14 +14,16 @@ import br.ifes.leticia.cafeteriabwsingleton.cdp.Cafe;
 public class Atendente implements Director{
 
     @Override
-    public Cafe fazerCafe(Builder atendente) {
+    public Cafe fazerCafe(BuilderAbstrato atendente, String nomeCafe) {
         Cafe cafe;
-        atendente.prepararAgua();
-        atendente.prepararPoCafe();
-        atendente.prepararIngredientes();
-        cafe = atendente.servirCafe();
+        
+        FabricaCafe fabricaCafe = new FabricaCafe();
+        cafe = fabricaCafe.criarCafe(nomeCafe);
+       
+        
+        
+        
         return cafe;
     }
-    
     
 }

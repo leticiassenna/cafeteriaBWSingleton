@@ -13,21 +13,11 @@ import java.util.ArrayList;
  */
 public class Cafe {
     private String nome;
-    private Agua agua;
     private PoCafe poCafe;
-   // private Ingrediente ingrediente;
     private float preco;
     private ArrayList<Ingrediente> ingredientes = new ArrayList<>();
 
 
-
-    public Agua getAgua() {
-        return agua;
-    }
-
-    public void setAgua(Agua agua) {
-        this.agua = agua;
-    }
 
     public PoCafe getPoCafe() {
         return poCafe;
@@ -63,7 +53,8 @@ public class Cafe {
     }
     
     public void getInformacao() {
-        System.out.println("Cafe {" + "tipo = " + getNome() + ", po de cafe = " + getPoCafe().getTipo() + 
+        String quebraLinha = System.getProperty("line.separator");
+        System.out.println(quebraLinha+ "Cafe {" + "tipo = " + getNome() + ", po de cafe = " + getPoCafe().getTipo() + 
                  ", preco = " + getPreco() + '}');
         System.out.println("Ingredientes: ");
         for (Ingrediente ingrediente: ingredientes)

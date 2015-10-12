@@ -27,6 +27,20 @@ public class TelaPromocao {
         System.out.println("7 - Domingo");
         setDiaSemana(Integer.parseInt(in.nextLine()));
         
+        while (getDiaSemana()<1 || getDiaSemana()>7){
+            System.out.println("Opção inválida, favor digitar novamente!");
+            
+            System.out.println("Dia da semana: ");
+            System.out.println("1 - Segunda-Feira");
+            System.out.println("2 - Terca-Feira");
+            System.out.println("3 - Quarta-Feira");
+            System.out.println("4 - Quinta-Feira");
+            System.out.println("5 - SextaFeira");
+            System.out.println("6 - Sabado");
+            System.out.println("7 - Domingo");
+            setDiaSemana(Integer.parseInt(in.nextLine()));
+        }
+        
     }
 
     public int getDiaSemana() {

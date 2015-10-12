@@ -13,8 +13,8 @@ import br.ifes.leticia.cafeteriabwsingleton.cdp.Cafe;
  */
 public class Cafeteria {
     private Cafeteria instance;
-    Cafe cafe ;
-    Fabrica fabrica;
+    private Cafe cafe ;
+    private final FabricaCafe fabrica = new FabricaCafe();
     
     private Cafeteria(){
         
@@ -30,42 +30,25 @@ public class Cafeteria {
     
     
     public synchronized Cafe getCafeNormal(){
-        fabrica = new FabricaCafeNormal();
-        cafe = fabrica.criarCafe();
+       
         
-        cafe.setNome("CAFE NORMAL");
-        cafe.setPreco(2);
-        cafe.setAgua(fabrica.criarAgua());
-        cafe.setPoCafe(fabrica.criarPoCafe());
-        cafe.setIngredientes(fabrica.criarIngrediente());
+        cafe = fabrica.criarCafe("CafeNormal");
         
         return cafe;
         
     }
     
     public synchronized Cafe getCafeDescafeinado(){
-        fabrica = new FabricaCafeDescafeinado();
-        cafe = fabrica.criarCafe();
         
-        cafe.setNome("CAFE DESCAFEINADO");
-        cafe.setPreco(3);
-        cafe.setAgua(fabrica.criarAgua());
-        cafe.setPoCafe(fabrica.criarPoCafe());
-        cafe.setIngredientes(fabrica.criarIngrediente());
+        cafe = fabrica.criarCafe("CafeDescafeinado");
         
         return cafe;
         
     }
     
     public synchronized Cafe getCafeCappuccino(){
-        fabrica = new FabricaCafeCappuccino();
-        cafe = fabrica.criarCafe();
         
-        cafe.setNome("CAFE CAPPUCCINO");
-        cafe.setPreco(5);
-        cafe.setAgua(fabrica.criarAgua());
-        cafe.setPoCafe(fabrica.criarPoCafe());
-        cafe.setIngredientes(fabrica.criarIngrediente());
+        cafe = fabrica.criarCafe("CafeCappuccino");
         
         return cafe;
         

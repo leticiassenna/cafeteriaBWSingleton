@@ -24,8 +24,9 @@ public class FabricaCafeMagic {
     public static Cafe criarCafe(String nome) {
 
         Atendente atendente = new Atendente();
+        BuilderAbstrato atendenteFaz = new BuilderAbstrato(){};
         Builder builder = builders.get(nome);
-        Cafe cafe = atendente.fazerCafe(builder);
+        Cafe cafe = atendente.fazerCafe(atendenteFaz, nome);
        
         return cafe;
     }
